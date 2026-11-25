@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { ArrowRight, BookOpen, Building, ShieldCheck, Scale, Award } from "lucide-react";
 import { FIRM_DETAILS } from "@/data/firmData";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function Hero() {
   return (
@@ -108,19 +109,27 @@ export default function Hero() {
               {/* Statistics Ledger */}
               <div className="py-6 grid grid-cols-2 gap-4">
                 <div className="border border-champagne/80 p-3.5 rounded bg-ivory">
-                  <div className="font-serif text-2xl font-bold text-charcoal">1996</div>
+                  <div className="font-serif text-2xl font-bold text-charcoal">
+                    <AnimatedCounter end={1996} duration={1500} />
+                  </div>
                   <div className="text-[11px] uppercase tracking-wider text-charcoal-500 font-medium mt-0.5">Year Founded</div>
                 </div>
                 <div className="border border-champagne/80 p-3.5 rounded bg-ivory">
-                  <div className="font-serif text-2xl font-bold text-gold">28+</div>
+                  <div className="font-serif text-2xl font-bold text-gold">
+                    <AnimatedCounter end={28} suffix="+" duration={1800} />
+                  </div>
                   <div className="text-[11px] uppercase tracking-wider text-charcoal-500 font-medium mt-0.5">Years Experience</div>
                 </div>
                 <div className="border border-champagne/80 p-3.5 rounded bg-ivory">
-                  <div className="font-serif text-2xl font-bold text-charcoal">22+</div>
+                  <div className="font-serif text-2xl font-bold text-charcoal">
+                    <AnimatedCounter end={22} suffix="+" duration={1800} />
+                  </div>
                   <div className="text-[11px] uppercase tracking-wider text-charcoal-500 font-medium mt-0.5">Practice Disciplines</div>
                 </div>
                 <div className="border border-champagne/80 p-3.5 rounded bg-ivory">
-                  <div className="font-serif text-2xl font-bold text-gold">8</div>
+                  <div className="font-serif text-2xl font-bold text-gold">
+                    <AnimatedCounter end={8} duration={1400} />
+                  </div>
                   <div className="text-[11px] uppercase tracking-wider text-charcoal-500 font-medium mt-0.5">Senior Advocates</div>
                 </div>
               </div>

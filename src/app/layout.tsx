@@ -3,6 +3,7 @@ import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SmoothScroll from "@/components/SmoothScroll";
 import { ASSOCIATES, PRACTICE_AREAS, FIRM_DETAILS } from "@/data/firmData";
 
 const inter = Inter({
@@ -155,7 +156,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${inter.variable} ${cinzel.variable} scroll-smooth`}>
+    <html lang="en" className={`${inter.variable} ${cinzel.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -163,6 +164,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-ivory font-sans text-charcoal antialiased selection:bg-gold-500/20 selection:text-charcoal-900">
+        <SmoothScroll />
         <Navbar />
         <main>{children}</main>
         <Footer />

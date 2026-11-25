@@ -9,8 +9,26 @@
   --champagne: #d8c9ae;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Lenis Smooth Scroll Configuration */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -65,4 +83,11 @@ body {
   padding: 0 0.75rem;
   color: #987641;
   font-size: 0.85rem;
+}
+
+/* Smooth card transitions and subtle hovering */
+.transition-luxury {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
