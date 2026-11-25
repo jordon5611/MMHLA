@@ -9,38 +9,50 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: {
-          50: "#f0f4f8",
-          100: "#d9e2ec",
-          200: "#bcccdc",
-          300: "#9fb3c8",
-          400: "#627d98",
-          500: "#486581",
-          600: "#334e68",
-          700: "#243b53",
-          800: "#102a43",
-          900: "#0b1b32",
-          950: "#060f1d",
+        charcoal: {
+          DEFAULT: "#211C16",
+          50: "#F7F6F5",
+          100: "#EAE7E3",
+          200: "#D5CFC7",
+          300: "#B5ABA0",
+          400: "#7F7365",
+          500: "#504437",
+          600: "#3D342A",
+          700: "#312921",
+          800: "#27211B",
+          900: "#211C16",
+          950: "#17130F",
         },
         gold: {
-          50: "#fbf8ef",
-          100: "#f6efdb",
-          200: "#eedcb3",
-          300: "#e3c586",
-          400: "#d4ac57",
-          500: "#c49233",
-          600: "#ab7627",
-          700: "#865620",
-          800: "#6e441f",
-          900: "#5b391d",
+          DEFAULT: "#987641",
+          50: "#FAF8F4",
+          100: "#F4EFE6",
+          200: "#E8DDC8",
+          300: "#D8C9AE", // Muted Champagne
+          400: "#B89B66",
+          500: "#987641", // Antique Gold
+          600: "#836434",
+          700: "#6B5028",
+          800: "#523C1E",
+          900: "#3B2B15",
+        },
+        ivory: {
+          DEFAULT: "#F4F0E8", // Warm Ivory
+          soft: "#FAF8F5",
+          pure: "#FFFFFF",
+          card: "#FBF9F5",
+          muted: "#ECE6D8",
+          dark: "#E3DAC7",
+        },
+        champagne: {
+          DEFAULT: "#D8C9AE", // Muted Champagne
+          light: "#EAE1CF",
+          dark: "#C5B292",
         },
       },
       fontFamily: {
-        serif: ["var(--font-cinzel)", "Georgia", "serif"],
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-      },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        serif: ["var(--font-cinzel)", "Georgia", "Cambria", "serif"],
+        sans: ["var(--font-inter)", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
       },
     },
   },

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Mian Mohammad Hanif Law Associates" }],
   viewport: "width=device-width, initial-scale=1",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/logo.png",
   },
   openGraph: {
     title: "Mian Mohammad Hanif Law Associates | Advocates & Legal Consultants",
@@ -42,6 +42,7 @@ export const metadata: Metadata = {
       "Over 28 years of trusted legal excellence in Pakistan. Combined legal, financial, and technical advisory across 22+ practice areas.",
     type: "website",
     locale: "en_PK",
+    images: [{ url: "/images/logo.png", width: 1024, height: 966, alt: "Mian Mohammad Hanif Law Associates Logo" }],
   },
 };
 
@@ -52,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${cinzel.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-navy-950 font-sans text-slate-100 antialiased selection:bg-gold-500/30 selection:text-gold-200">
+      <body className="min-h-screen bg-ivory font-sans text-charcoal antialiased selection:bg-gold-500/20 selection:text-charcoal-900">
         <Navbar />
         <main>{children}</main>
         <Footer />

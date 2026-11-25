@@ -10,7 +10,7 @@ import {
   CheckCircle2,
   X,
   ArrowRight,
-  Shield,
+  ShieldCheck,
   Briefcase,
   MapPin,
 } from "lucide-react";
@@ -19,21 +19,25 @@ export default function AssociatesSection() {
   const [selectedAssociate, setSelectedAssociate] = useState<Associate | null>(null);
 
   return (
-    <section id="associates" className="py-24 bg-navy-900/40 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="associates" className="py-24 bg-ivory-soft border-b border-champagne">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-navy-950 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-4">
-            <Scale className="w-3.5 h-3.5 text-gold-400" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full border border-gold/40 bg-ivory text-gold text-xs font-serif uppercase tracking-widest mb-3">
+            <Scale className="w-3.5 h-3.5 text-gold" />
             <span>Distinguished Legal Team</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-50 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal tracking-tight">
             Our Associates & Counsel
           </h2>
-          <p className="mt-4 text-slate-300 text-base sm:text-lg">
-            A protective team of senior advocates admitted to the Supreme Court and High Courts of Pakistan, with specialized appointments across government statutory boards and enterprise counsel.
+          <p className="mt-3 text-charcoal-700 text-base sm:text-lg">
+            A protective team of senior advocates admitted to the Supreme Court and High Courts of Pakistan, with specialized standing appointments across statutory bodies and corporate boards.
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mt-4 rounded-full" />
+          <div className="flex items-center justify-center space-x-3 mt-4">
+            <div className="w-16 h-[1px] bg-gold/50" />
+            <span className="text-gold text-xs">◆</span>
+            <div className="w-16 h-[1px] bg-gold/50" />
+          </div>
         </div>
 
         {/* Associates Grid */}
@@ -46,41 +50,41 @@ export default function AssociatesSection() {
               <div
                 key={advocate.id}
                 onClick={() => setSelectedAssociate(advocate)}
-                className={`rounded-2xl border transition-all duration-300 p-6 flex flex-col justify-between cursor-pointer group hover:-translate-y-1.5 shadow-xl ${
+                className={`rounded-lg border transition-all duration-200 p-6 flex flex-col justify-between cursor-pointer group shadow-sm hover:shadow-md hover:-translate-y-0.5 ${
                   isFounder
-                    ? "bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950 border-gold-500/60 shadow-gold-500/10 hover:border-gold-400 md:col-span-2 lg:col-span-2"
+                    ? "bg-ivory border-gold md:col-span-2 lg:col-span-2 shadow-sm"
                     : isSupremeCourt
-                    ? "bg-gradient-to-b from-navy-900 via-navy-950 to-navy-950 border-gold-500/40 hover:border-gold-400 md:col-span-2 lg:col-span-2"
-                    : "bg-gradient-to-b from-navy-950/90 to-navy-900/90 border-slate-800 hover:border-gold-500/40"
+                    ? "bg-ivory border-gold/60 md:col-span-2 lg:col-span-2 shadow-sm"
+                    : "bg-ivory-card border-champagne hover:border-gold"
                 }`}
               >
                 <div>
-                  {/* Top Bar / Badges */}
+                  {/* Top Badges */}
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20">
+                    <span className="text-[11px] font-serif uppercase tracking-wider px-2.5 py-1 rounded bg-ivory border border-gold/40 text-gold font-bold">
                       {advocate.court}
                     </span>
                     {advocate.reportedCases && (
-                      <span className="inline-flex items-center space-x-1 text-[11px] text-slate-400">
-                        <BookOpen className="w-3.5 h-3.5 text-gold-400" />
+                      <span className="inline-flex items-center space-x-1 text-[11px] text-charcoal-500 font-medium">
+                        <BookOpen className="w-3.5 h-3.5 text-gold" />
                         <span>Reported Cases</span>
                       </span>
                     )}
                     {advocate.office && (
-                      <span className="inline-flex items-center space-x-1 text-[11px] text-slate-400">
-                        <MapPin className="w-3.5 h-3.5 text-gold-400" />
+                      <span className="inline-flex items-center space-x-1 text-[11px] text-charcoal-500 font-medium">
+                        <MapPin className="w-3.5 h-3.5 text-gold" />
                         <span>{advocate.office}</span>
                       </span>
                     )}
                   </div>
 
-                  {/* Avatar / Crest representation */}
+                  {/* Header: Initial Crest & Names */}
                   <div className="flex items-center space-x-4 mb-4">
                     <div
-                      className={`w-14 h-14 rounded-xl flex items-center justify-center font-serif text-lg font-bold border shrink-0 transition-transform group-hover:scale-105 ${
+                      className={`w-14 h-14 rounded flex items-center justify-center font-serif text-lg font-bold shrink-0 border ${
                         isFounder
-                          ? "bg-gold-500/20 text-gold-300 border-gold-400/80 shadow-md"
-                          : "bg-navy-900 text-gold-400 border-slate-700 group-hover:border-gold-400"
+                          ? "bg-ivory border-gold text-gold shadow-sm"
+                          : "bg-ivory border-champagne text-charcoal group-hover:border-gold group-hover:text-gold transition-colors"
                       }`}
                     >
                       {advocate.name
@@ -90,47 +94,47 @@ export default function AssociatesSection() {
                         .join("")}
                     </div>
                     <div>
-                      <h3 className="font-serif text-lg sm:text-xl font-bold text-slate-100 group-hover:text-gold-300 transition-colors">
+                      <h3 className="font-serif text-lg sm:text-xl font-bold text-charcoal group-hover:text-gold transition-colors">
                         {advocate.name}
                       </h3>
-                      <p className="text-xs text-gold-400/90 font-medium">
+                      <p className="text-xs text-gold font-serif font-semibold">
                         {advocate.title}
                       </p>
                     </div>
                   </div>
 
-                  {/* Specialty line */}
+                  {/* Specialization tag */}
                   {advocate.specialty && (
-                    <div className="mb-3 text-xs text-slate-300 font-medium bg-navy-900/60 p-2.5 rounded-lg border border-slate-800">
-                      <span className="text-gold-400 font-semibold">Specialization: </span>
-                      {advocate.specialty}
+                    <div className="mb-3 text-xs text-charcoal-700 bg-ivory p-2.5 rounded border border-champagne/80">
+                      <span className="text-gold font-bold font-serif uppercase tracking-wider text-[11px]">Specialization: </span>
+                      <span className="font-sans">{advocate.specialty}</span>
                     </div>
                   )}
 
-                  {/* Public roles badges */}
+                  {/* Public roles / Standing appointments */}
                   {advocate.publicRoles && (
                     <div className="mb-3 space-y-1">
                       {advocate.publicRoles.map((role, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center space-x-1.5 text-[11px] text-slate-300"
+                          className="flex items-center space-x-1.5 text-[11px] text-charcoal-700"
                         >
-                          <Building className="w-3 h-3 text-gold-400 shrink-0" />
+                          <Building className="w-3 h-3 text-gold shrink-0" />
                           <span className="truncate">{role}</span>
                         </div>
                       ))}
                     </div>
                   )}
 
-                  {/* Short Summary */}
-                  <p className="text-slate-400 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
+                  {/* Summary snippet */}
+                  <p className="text-charcoal-600 text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4 font-sans">
                     {advocate.summary}
                   </p>
                 </div>
 
-                {/* Footer link */}
-                <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-gold-400 group-hover:text-gold-300">
-                  <span>View Full Profile & Experience</span>
+                {/* Card Action Link */}
+                <div className="pt-3 border-t border-champagne/80 flex items-center justify-between text-xs font-serif uppercase tracking-wider font-bold text-gold group-hover:text-gold-700">
+                  <span>View Full Credentials</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -138,20 +142,20 @@ export default function AssociatesSection() {
           })}
         </div>
 
-        {/* Advocate Detail Modal */}
+        {/* Modal for Advocate Profile */}
         {selectedAssociate && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-navy-950/85 backdrop-blur-md animate-in fade-in duration-200">
-            <div className="bg-navy-900 border border-gold-500/50 rounded-2xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-charcoal/70 backdrop-blur-sm animate-in fade-in duration-150">
+            <div className="bg-ivory border border-gold rounded-lg max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
               <button
                 onClick={() => setSelectedAssociate(null)}
-                className="absolute top-5 right-5 p-2 rounded-lg text-slate-400 hover:text-slate-100 hover:bg-navy-800 transition-colors"
+                className="absolute top-5 right-5 p-2 rounded text-charcoal-400 hover:text-charcoal hover:bg-champagne/40 transition-colors"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex items-center space-x-4 mb-5">
-                <div className="w-16 h-16 rounded-2xl bg-gold-500/20 border border-gold-400 flex items-center justify-center font-serif text-2xl font-bold text-gold-300">
+                <div className="w-16 h-16 rounded bg-ivory-card border border-gold flex items-center justify-center font-serif text-2xl font-bold text-gold">
                   {selectedAssociate.name
                     .split(" ")
                     .map((n) => n[0])
@@ -159,25 +163,25 @@ export default function AssociatesSection() {
                     .join("")}
                 </div>
                 <div>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-100">
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal">
                     {selectedAssociate.name}
                   </h3>
-                  <p className="text-sm text-gold-400 font-medium">
+                  <p className="text-sm font-serif font-bold text-gold">
                     {selectedAssociate.title} • {selectedAssociate.court}
                   </p>
                 </div>
               </div>
 
-              {/* Public roles / Standing counsel appointments */}
+              {/* Public roles if present */}
               {selectedAssociate.publicRoles && (
-                <div className="mb-5 bg-navy-950/80 p-4 rounded-xl border border-gold-500/30">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-gold-400 mb-2.5">
-                    Official Standing Counsel & Government Roles
+                <div className="mb-5 bg-ivory-card p-4 rounded border border-gold/40">
+                  <h4 className="text-xs font-serif uppercase tracking-widest font-bold text-gold mb-2">
+                    Official Standing Counsel & Government Appointments
                   </h4>
                   <div className="space-y-1.5">
                     {selectedAssociate.publicRoles.map((role, idx) => (
-                      <div key={idx} className="flex items-start space-x-2 text-xs sm:text-sm text-slate-200">
-                        <Building className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start space-x-2 text-xs sm:text-sm text-charcoal-800">
+                        <Building className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                         <span>{role}</span>
                       </div>
                     ))}
@@ -185,36 +189,36 @@ export default function AssociatesSection() {
                 </div>
               )}
 
-              {/* Full narrative */}
+              {/* Narrative */}
               <div className="mb-6">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
-                  Professional Experience & Credentials
+                <h4 className="text-xs font-serif uppercase tracking-widest font-bold text-charcoal-500 mb-2">
+                  Professional Experience & Background
                 </h4>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed font-sans">
                   {selectedAssociate.summary}
                 </p>
               </div>
 
-              {/* Reported cases banner if present */}
+              {/* Reported cases banner */}
               {selectedAssociate.reportedCases && (
-                <div className="mb-6 flex items-center space-x-3 bg-navy-950/70 p-3 rounded-lg border border-slate-800 text-xs text-slate-300">
-                  <BookOpen className="w-5 h-5 text-gold-400 shrink-0" />
+                <div className="mb-6 flex items-center space-x-3 bg-ivory-card p-3 rounded border border-champagne text-xs text-charcoal-700">
+                  <BookOpen className="w-5 h-5 text-gold shrink-0" />
                   <span>
-                    Judicial Record: Landmark cases argued by this advocate have been officially published in Pakistan&apos;s authoritative Law Journals upon court orders.
+                    Judicial Record: Landmark cases argued by this advocate have been officially reported in Pakistan&apos;s authoritative Law Journals upon court directions.
                   </span>
                 </div>
               )}
 
-              {/* Practice Areas Covered */}
+              {/* Practice Areas */}
               <div className="mb-6">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5">
+                <h4 className="text-xs font-serif uppercase tracking-widest font-bold text-charcoal-500 mb-2">
                   Core Practice Focus
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {selectedAssociate.practiceAreas.map((area, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-md text-xs bg-navy-950 text-slate-200 border border-slate-700"
+                      className="px-3 py-1 rounded text-xs bg-ivory-card text-charcoal-800 border border-champagne font-sans"
                     >
                       {area}
                     </span>
@@ -223,19 +227,19 @@ export default function AssociatesSection() {
               </div>
 
               {/* Modal footer */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-slate-800">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-champagne">
                 <button
                   onClick={() => setSelectedAssociate(null)}
-                  className="w-full sm:w-auto px-4 py-2 rounded-lg text-xs font-medium text-slate-300 hover:bg-navy-800 border border-slate-700"
+                  className="w-full sm:w-auto px-4 py-2.5 rounded text-xs font-serif uppercase tracking-wider text-charcoal-700 hover:bg-champagne/40 border border-champagne"
                 >
                   Close Profile
                 </button>
                 <a
                   href="#contact"
                   onClick={() => setSelectedAssociate(null)}
-                  className="w-full sm:w-auto px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider text-navy-950 bg-gold-400 hover:bg-gold-300 transition-colors text-center"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded text-xs font-serif uppercase tracking-wider font-bold text-ivory bg-gold hover:bg-gold-600 transition-colors text-center shadow-sm"
                 >
-                  Schedule Consultation with Counsel
+                  Schedule Chamber Meeting
                 </a>
               </div>
             </div>

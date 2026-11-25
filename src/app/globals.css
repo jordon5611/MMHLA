@@ -3,16 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 248, 250, 252;
-  --background-start-rgb: 7, 16, 30;
-  --background-end-rgb: 11, 27, 50;
+  --charcoal: #211c16;
+  --gold: #987641;
+  --ivory: #f4f0e8;
+  --champagne: #d8c9ae;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #060f1d;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  background-color: #f4f0e8;
+  color: #211c16;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom Scrollbar */
@@ -20,45 +27,42 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #060f1d;
+  background: #211c16;
 }
 ::-webkit-scrollbar-thumb {
-  background: #243b53;
+  background: #987641;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c49233;
+  background: #836434;
 }
 
-/* Gold Gradient text */
-.text-gold-gradient {
-  background: linear-gradient(135deg, #f6efdb 0%, #e3c586 40%, #c49233 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Elegant traditional borders & dividers */
+.border-gold-traditional {
+  border-color: #987641;
 }
 
-.text-gold-bright {
-  background: linear-gradient(135deg, #ffffff 0%, #eedcb3 50%, #d4ac57 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.border-champagne {
+  border-color: #d8c9ae;
 }
 
-/* Law firm watermark pattern */
-.bg-legal-pattern {
-  background-color: #060f1d;
-  background-image: radial-gradient(rgba(196, 146, 51, 0.08) 1px, transparent 1px),
-    radial-gradient(rgba(36, 59, 83, 0.25) 1px, #060f1d 1px);
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
+/* Traditional Gold ornament diamond rule */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem 0;
 }
-
-/* Card Subtle Border Glow */
-.gold-card-glow {
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.gold-divider::before,
+.gold-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #987641;
+  opacity: 0.45;
 }
-.gold-card-glow:hover {
-  border-color: rgba(196, 146, 51, 0.45);
-  box-shadow: 0 10px 30px -10px rgba(196, 146, 51, 0.15);
-  transform: translateY(-2px);
+.gold-divider span {
+  padding: 0 0.75rem;
+  color: #987641;
+  font-size: 0.85rem;
 }

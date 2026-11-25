@@ -7,7 +7,7 @@ import {
   Mail,
   MapPin,
   Clock,
-  Shield,
+  ShieldCheck,
   Send,
   CheckCircle,
   MessageSquare,
@@ -31,49 +31,52 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // Simulate submission delay
     setTimeout(() => {
       setSubmitting(false);
       setSubmitted(true);
-    }, 700);
+    }, 600);
   };
 
   return (
-    <section id="contact" className="py-24 bg-navy-900/50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="contact" className="py-24 bg-ivory-soft border-b border-champagne">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-navy-950 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest mb-4">
-            <Scale className="w-3.5 h-3.5 text-gold-400" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full border border-gold/40 bg-ivory text-gold text-xs font-serif uppercase tracking-widest mb-3">
+            <Scale className="w-3.5 h-3.5 text-gold" />
             <span>Consultation & Inquiries</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-50 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal tracking-tight">
             Schedule a Confidential Consultation
           </h2>
-          <p className="mt-4 text-slate-300 text-base sm:text-lg">
-            Connect directly with our senior advocates. We review every legal inquiry with strict confidentiality and priority.
+          <p className="mt-3 text-charcoal-700 text-base sm:text-lg">
+            Connect directly with our senior advocates. Every legal matter is reviewed with utmost discretion, professionalism, and prompt attention.
           </p>
-          <div className="w-20 h-1 bg-gradient-to-r from-gold-400 to-gold-600 mx-auto mt-4 rounded-full" />
+          <div className="flex items-center justify-center space-x-3 mt-4">
+            <div className="w-16 h-[1px] bg-gold/50" />
+            <span className="text-gold text-xs">◆</span>
+            <div className="w-16 h-[1px] bg-gold/50" />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Column: Contact Channels & Chambers Info */}
+          {/* Left Column: Chambers & Contact Channels */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-navy-950/90 border border-slate-800 rounded-2xl p-6 sm:p-7 shadow-xl">
-              <h3 className="font-serif text-xl font-bold text-slate-100 mb-6 flex items-center space-x-2">
-                <Building className="w-5 h-5 text-gold-400" />
-                <span>Chambers & Contact Channels</span>
+            <div className="bg-ivory border border-champagne rounded-lg p-6 sm:p-8 shadow-sm">
+              <h3 className="font-serif text-xl font-bold text-charcoal mb-6 flex items-center space-x-2">
+                <Building className="w-5 h-5 text-gold" />
+                <span>Chambers & Direct Channels</span>
               </h3>
 
-              <div className="space-y-5 text-sm">
+              <div className="space-y-5 text-sm font-sans">
                 {/* Principal Office */}
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-navy-900 border border-gold-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4 text-gold-400" />
+                  <div className="w-9 h-9 rounded bg-ivory-soft border border-gold/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPin className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-200">Principal Chambers</h4>
-                    <p className="text-slate-400 text-xs mt-0.5">
+                    <h4 className="font-semibold text-charcoal font-serif">Principal Chambers</h4>
+                    <p className="text-charcoal-600 text-xs mt-0.5">
                       {FIRM_DETAILS.contacts.principalOffice}
                     </p>
                   </div>
@@ -81,29 +84,29 @@ export default function ContactSection() {
 
                 {/* Sheikhupura Office */}
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-navy-900 border border-gold-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin className="w-4 h-4 text-gold-400" />
+                  <div className="w-9 h-9 rounded bg-ivory-soft border border-gold/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <MapPin className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-200">Sheikhupura Office</h4>
-                    <p className="text-slate-400 text-xs mt-0.5">
+                    <h4 className="font-semibold text-charcoal font-serif">Sheikhupura Office</h4>
+                    <p className="text-charcoal-600 text-xs mt-0.5">
                       {FIRM_DETAILS.contacts.sheikhupuraOffice}
                     </p>
-                    <span className="text-[11px] text-gold-400 font-medium">
+                    <span className="text-[11px] text-gold font-medium">
                       Advocate High Court Zunnurain Ahmad
                     </span>
                   </div>
                 </div>
 
-                {/* Phone */}
+                {/* Telephone */}
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-navy-900 border border-gold-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <Phone className="w-4 h-4 text-gold-400" />
+                  <div className="w-9 h-9 rounded bg-ivory-soft border border-gold/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <Phone className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-200">Telephone Lines</h4>
-                    <p className="text-slate-300 text-xs mt-0.5">
-                      <a href={`tel:${FIRM_DETAILS.contacts.phone}`} className="hover:text-gold-300">
+                    <h4 className="font-semibold text-charcoal font-serif">Telephone Lines</h4>
+                    <p className="text-charcoal-700 text-xs mt-0.5">
+                      <a href={`tel:${FIRM_DETAILS.contacts.phone}`} className="hover:text-gold transition-colors">
                         {FIRM_DETAILS.contacts.phone}
                       </a>
                     </p>
@@ -112,72 +115,72 @@ export default function ContactSection() {
 
                 {/* WhatsApp */}
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-navy-900 border border-gold-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <MessageSquare className="w-4 h-4 text-emerald-400" />
+                  <div className="w-9 h-9 rounded bg-ivory-soft border border-gold/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <MessageSquare className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-200">Instant WhatsApp</h4>
+                    <h4 className="font-semibold text-charcoal font-serif">Instant WhatsApp</h4>
                     <a
                       href={`https://wa.me/${FIRM_DETAILS.contacts.whatsapp}?text=Hello%20Mian%20Mohammad%20Hanif%20Law%20Associates,%20I%20would%20like%20to%20request%20a%20legal%20consultation.`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-emerald-400 hover:text-emerald-300 text-xs font-medium inline-block mt-0.5"
+                      className="text-gold hover:text-gold-700 text-xs font-semibold inline-block mt-0.5"
                     >
-                      Connect on WhatsApp &rarr;
+                      Connect with Legal Chambers &rarr;
                     </a>
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-navy-900 border border-gold-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <Mail className="w-4 h-4 text-gold-400" />
+                  <div className="w-9 h-9 rounded bg-ivory-soft border border-gold/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <Mail className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-200">Electronic Mail</h4>
-                    <p className="text-slate-300 text-xs mt-0.5">
-                      <a href={`mailto:${FIRM_DETAILS.contacts.email}`} className="hover:text-gold-300">
+                    <h4 className="font-semibold text-charcoal font-serif">Electronic Mail</h4>
+                    <p className="text-charcoal-700 text-xs mt-0.5">
+                      <a href={`mailto:${FIRM_DETAILS.contacts.email}`} className="hover:text-gold transition-colors">
                         {FIRM_DETAILS.contacts.email}
                       </a>
                     </p>
                   </div>
                 </div>
 
-                {/* Timing */}
+                {/* Hours */}
                 <div className="flex items-start space-x-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-navy-900 border border-gold-500/30 flex items-center justify-center shrink-0 mt-0.5">
-                    <Clock className="w-4 h-4 text-gold-400" />
+                  <div className="w-9 h-9 rounded bg-ivory-soft border border-gold/40 flex items-center justify-center shrink-0 mt-0.5">
+                    <Clock className="w-4 h-4 text-gold" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-200">Working Hours</h4>
-                    <p className="text-slate-400 text-xs mt-0.5">{FIRM_DETAILS.contacts.timing}</p>
+                    <h4 className="font-semibold text-charcoal font-serif">Chamber Timings</h4>
+                    <p className="text-charcoal-600 text-xs mt-0.5">{FIRM_DETAILS.contacts.timing}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Privilege Note */}
-            <div className="bg-navy-950/60 border border-slate-800 p-5 rounded-xl flex items-start space-x-3">
-              <Shield className="w-5 h-5 text-gold-400 shrink-0 mt-0.5" />
-              <p className="text-xs text-slate-400 leading-relaxed">
-                <strong className="text-slate-300">Attorney-Client Privilege:</strong> Initial inquiries submitted through this portal are treated with the highest standard of legal confidentiality.
+            {/* Attorney-Client Privilege Note */}
+            <div className="bg-ivory border border-champagne p-5 rounded-lg flex items-start space-x-3">
+              <ShieldCheck className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+              <p className="text-xs text-charcoal-600 leading-relaxed font-sans">
+                <strong className="text-charcoal font-serif">Confidentiality Assured:</strong> Initial case submissions are treated with rigorous professional discretion in accordance with legal standards.
               </p>
             </div>
           </div>
 
-          {/* Right Column: Interactive Consultation Form */}
+          {/* Right Column: Traditional Consultation Form */}
           <div className="lg:col-span-7">
-            <div className="bg-gradient-to-b from-navy-950 to-navy-900 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+            <div className="bg-ivory border border-champagne rounded-lg p-6 sm:p-8 shadow-sm">
               {submitted ? (
                 <div className="text-center py-12 px-4 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-gold-500/20 border border-gold-400 flex items-center justify-center mx-auto text-gold-400">
+                  <div className="w-16 h-16 rounded-full bg-ivory border border-gold flex items-center justify-center mx-auto text-gold">
                     <CheckCircle className="w-8 h-8" />
                   </div>
-                  <h3 className="font-serif text-2xl font-bold text-slate-100">
+                  <h3 className="font-serif text-2xl font-bold text-charcoal">
                     Inquiry Received
                   </h3>
-                  <p className="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-                    Thank you, <span className="text-gold-300 font-semibold">{formData.name}</span>. Your consultation request has been forwarded to our legal team. We will review your case matter and reach out within 24 hours.
+                  <p className="text-charcoal-700 text-sm max-w-md mx-auto leading-relaxed font-sans">
+                    Thank you, <span className="font-bold text-charcoal">{formData.name}</span>. Your consultation request has been forwarded to our legal team. We will review your case matter and contact you promptly.
                   </p>
                   <button
                     onClick={() => {
@@ -191,24 +194,24 @@ export default function ContactSection() {
                         message: "",
                       });
                     }}
-                    className="mt-6 px-6 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider text-navy-950 bg-gold-400 hover:bg-gold-300"
+                    className="mt-6 px-6 py-2.5 rounded text-xs font-serif uppercase tracking-widest font-bold text-ivory bg-gold hover:bg-gold-600 shadow-sm"
                   >
                     Submit Another Inquiry
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="font-serif text-xl font-bold text-slate-100 mb-2">
-                    Case Matter & Consultation Request
+                  <h3 className="font-serif text-xl font-bold text-charcoal mb-1">
+                    Chamber Consultation Request
                   </h3>
-                  <p className="text-xs text-slate-400 mb-6">
-                    Fill out the form below and an advocate from our specialized practice team will contact you.
+                  <p className="text-xs text-charcoal-500 mb-6 font-sans">
+                    Provide the relevant details below and an advocate from our specialized practice team will contact you.
                   </p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Name */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-serif uppercase tracking-wider text-charcoal-700 mb-1.5 font-bold">
                         Full Name *
                       </label>
                       <input
@@ -217,13 +220,13 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Mohammad Ali"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-navy-900/90 border border-slate-700 focus:border-gold-400 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-gold-400"
+                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
                       />
                     </div>
 
                     {/* Phone */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-serif uppercase tracking-wider text-charcoal-700 mb-1.5 font-bold">
                         Phone / WhatsApp *
                       </label>
                       <input
@@ -232,7 +235,7 @@ export default function ContactSection() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="e.g. +92 300 1234567"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-navy-900/90 border border-slate-700 focus:border-gold-400 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-gold-400"
+                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -240,7 +243,7 @@ export default function ContactSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {/* Email */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-serif uppercase tracking-wider text-charcoal-700 mb-1.5 font-bold">
                         Email Address *
                       </label>
                       <input
@@ -249,19 +252,19 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="e.g. ali@domain.com"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-navy-900/90 border border-slate-700 focus:border-gold-400 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-gold-400"
+                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
                       />
                     </div>
 
-                    {/* Office / Meeting preference */}
+                    {/* Location */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                      <label className="block text-xs font-serif uppercase tracking-wider text-charcoal-700 mb-1.5 font-bold">
                         Preferred Location
                       </label>
                       <select
                         value={formData.office}
                         onChange={(e) => setFormData({ ...formData, office: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-navy-900/90 border border-slate-700 focus:border-gold-400 text-sm text-slate-100 focus:outline-none focus:ring-1 focus:ring-gold-400"
+                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal focus:outline-none"
                       >
                         <option value="Principal Chambers, Lahore">Principal Chambers, Lahore</option>
                         <option value="Sheikhupura Office">Sheikhupura Office</option>
@@ -272,28 +275,28 @@ export default function ContactSection() {
 
                   {/* Practice Area */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                      Primary Legal Practice Area *
+                    <label className="block text-xs font-serif uppercase tracking-wider text-charcoal-700 mb-1.5 font-bold">
+                      Primary Practice Area *
                     </label>
                     <select
                       required
                       value={formData.practiceArea}
                       onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-navy-900/90 border border-slate-700 focus:border-gold-400 text-sm text-slate-100 focus:outline-none focus:ring-1 focus:ring-gold-400"
+                      className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal focus:outline-none"
                     >
-                      <option value="">-- Select Relevant Practice Area --</option>
+                      <option value="">-- Select Relevant Practice Discipline --</option>
                       {PRACTICE_AREAS.map((area) => (
                         <option key={area.id} value={area.name}>
                           {area.name} ({area.category})
                         </option>
                       ))}
-                      <option value="General Legal Inquiry">Other / General Consultation</option>
+                      <option value="General Legal Matter">Other / General Consultation</option>
                     </select>
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
+                    <label className="block text-xs font-serif uppercase tracking-wider text-charcoal-700 mb-1.5 font-bold">
                       Case Summary / Description *
                     </label>
                     <textarea
@@ -302,7 +305,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Please provide a concise description of your dispute, notice, or advisory requirements..."
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-navy-900/90 border border-slate-700 focus:border-gold-400 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-gold-400 resize-none"
+                      className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal placeholder-charcoal-400 focus:outline-none resize-none font-sans"
                     />
                   </div>
 
@@ -311,7 +314,7 @@ export default function ContactSection() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full py-3 px-6 rounded-lg font-bold text-xs uppercase tracking-wider text-navy-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 hover:from-gold-200 hover:to-gold-400 shadow-lg hover:shadow-gold-500/20 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50"
+                      className="w-full py-3.5 px-6 rounded font-serif font-bold text-xs uppercase tracking-widest text-ivory bg-gold hover:bg-gold-600 transition-colors shadow-sm flex items-center justify-center space-x-2 disabled:opacity-50"
                     >
                       {submitting ? (
                         <span>Submitting Request...</span>
