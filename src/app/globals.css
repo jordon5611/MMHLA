@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 248, 250, 252;
+  --background-start-rgb: 7, 16, 30;
+  --background-end-rgb: 11, 27, 50;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #060f1d;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060f1d;
+}
+::-webkit-scrollbar-thumb {
+  background: #243b53;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c49233;
+}
+
+/* Gold Gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f6efdb 0%, #e3c586 40%, #c49233 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-bright {
+  background: linear-gradient(135deg, #ffffff 0%, #eedcb3 50%, #d4ac57 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Law firm watermark pattern */
+.bg-legal-pattern {
+  background-color: #060f1d;
+  background-image: radial-gradient(rgba(196, 146, 51, 0.08) 1px, transparent 1px),
+    radial-gradient(rgba(36, 59, 83, 0.25) 1px, #060f1d 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Card Subtle Border Glow */
+.gold-card-glow {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gold-card-glow:hover {
+  border-color: rgba(196, 146, 51, 0.45);
+  box-shadow: 0 10px 30px -10px rgba(196, 146, 51, 0.15);
+  transform: translateY(-2px);
+}
