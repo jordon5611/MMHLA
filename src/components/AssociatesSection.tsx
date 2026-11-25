@@ -50,11 +50,11 @@ export default function AssociatesSection() {
               <div
                 key={advocate.id}
                 onClick={() => setSelectedAssociate(advocate)}
-                className={`rounded-lg border transition-all duration-200 p-6 flex flex-col justify-between cursor-pointer group shadow-sm hover:shadow-md hover:-translate-y-0.5 ${
+                className={`rounded-lg border border-t-2 border-t-gold transition-all duration-300 p-7 flex flex-col justify-between cursor-pointer group shadow-sm hover:shadow-2xl hover:-translate-y-1 ${
                   isFounder
-                    ? "bg-ivory border-gold md:col-span-2 lg:col-span-2 shadow-sm"
+                    ? "bg-ivory border-gold shadow-md md:col-span-2 lg:col-span-2 ring-1 ring-gold/20"
                     : isSupremeCourt
-                    ? "bg-ivory border-gold/60 md:col-span-2 lg:col-span-2 shadow-sm"
+                    ? "bg-ivory border-gold/60 shadow-md md:col-span-2 lg:col-span-2"
                     : "bg-ivory-card border-champagne hover:border-gold"
                 }`}
               >

@@ -50,10 +50,10 @@ export default function ClientSectors() {
             return (
               <div
                 key={idx}
-                className="bg-ivory-card border border-champagne hover:border-gold rounded-lg p-6 transition-all duration-200 shadow-sm group hover:-translate-y-0.5"
+                className="bg-ivory-card border border-champagne border-t-2 border-t-gold/70 hover:border-gold rounded-lg p-7 shadow-sm hover:shadow-xl transition-all duration-300 group hover:-translate-y-1"
               >
-                <div className="w-12 h-12 rounded bg-ivory border border-gold/40 flex items-center justify-center mb-5 group-hover:bg-gold transition-colors">
-                  <IconComp className="w-6 h-6 text-gold group-hover:text-ivory transition-colors" />
+                <div className="w-12 h-12 rounded bg-charcoal text-gold flex items-center justify-center mb-5 group-hover:bg-gold group-hover:text-charcoal transition-colors shadow-sm">
+                  <IconComp className="w-6 h-6" />
                 </div>
 
                 <h3 className="font-serif text-xl font-bold text-charcoal group-hover:text-gold transition-colors mb-2.5">

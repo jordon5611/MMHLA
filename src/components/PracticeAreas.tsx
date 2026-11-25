@@ -165,15 +165,15 @@ export default function PracticeAreas() {
                 <div
                   key={practice.id}
                   onClick={() => setActiveModalPractice(practice)}
-                  className="bg-ivory-card border border-champagne hover:border-gold rounded-lg p-6 transition-all duration-200 shadow-sm cursor-pointer group flex flex-col justify-between hover:-translate-y-0.5"
+                  className="bg-ivory-card border border-champagne border-t-2 border-t-gold/70 hover:border-gold rounded-lg p-6 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col justify-between hover:-translate-y-1 relative"
                 >
                   <div>
                     {/* Header: Icon & Category */}
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded bg-ivory border border-gold/40 flex items-center justify-center group-hover:bg-gold transition-colors">
-                        <IconComp className="w-6 h-6 text-gold group-hover:text-ivory transition-colors" />
+                      <div className="w-12 h-12 rounded bg-charcoal text-gold flex items-center justify-center group-hover:bg-gold group-hover:text-charcoal transition-colors shadow-sm">
+                        <IconComp className="w-6 h-6" />
                       </div>
-                      <span className="text-[11px] font-serif uppercase tracking-wider text-gold bg-ivory border border-champagne px-2.5 py-1 rounded">
+                      <span className="text-[11px] font-serif uppercase tracking-wider text-gold bg-ivory border border-gold/30 px-2.5 py-1 rounded font-semibold">
                         {practice.category}
                       </span>
                     </div>
