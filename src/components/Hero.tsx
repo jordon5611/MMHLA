@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck, Scale, Award, BookOpen, Building, CheckCircle2 } from "lucide-react";
 import { FIRM_DETAILS } from "@/data/firmData";
 import AnimatedCounter from "@/components/AnimatedCounter";
@@ -64,20 +65,20 @@ export default function Hero() {
 
               {/* Action Buttons */}
               <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="inline-flex items-center justify-center px-8 py-4 text-xs font-serif font-bold tracking-widest uppercase text-charcoal-950 bg-gold hover:bg-gold-400 rounded transition-all shadow-lg hover:shadow-gold/20 group"
                 >
                   <span>Request Chamber Consultation</span>
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
 
-                <a
-                  href="#practice-areas"
+                <Link
+                  href="/practice-areas"
                   className="inline-flex items-center justify-center px-7 py-4 text-xs font-serif font-bold tracking-widest uppercase text-ivory hover:text-gold border border-gold/50 hover:border-gold rounded bg-charcoal-900/50 backdrop-blur-sm transition-all"
                 >
                   <span>Explore 22+ Practice Areas</span>
-                </a>
+                </Link>
               </div>
 
               {/* Institutional Trust Footnote */}
@@ -167,12 +168,12 @@ export default function Hero() {
 
                 {/* Chamber Appointment Link */}
                 <div className="mt-6 pt-4 border-t border-champagne">
-                  <a
-                    href="#contact"
+                  <Link
+                    href="/contact"
                     className="block w-full py-3.5 px-4 text-center font-serif text-xs uppercase tracking-widest font-bold text-ivory bg-charcoal hover:bg-charcoal-800 rounded transition-colors shadow-sm"
                   >
                     Schedule Chamber Appointment
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -195,10 +196,10 @@ export default function Hero() {
               <p className="text-charcoal-600 text-xs sm:text-sm leading-relaxed font-sans mb-4">
                 Senior advocates conducting high-stakes Constitutional writs, Civil revisions, Criminal appeals, and commercial disputes before the apex court and High Courts.
               </p>
-              <a href="#associates" className="text-xs font-serif uppercase tracking-wider font-bold text-gold hover:text-gold-700 inline-flex items-center">
+              <Link href="/associates" className="text-xs font-serif uppercase tracking-wider font-bold text-gold hover:text-gold-700 inline-flex items-center">
                 <span>Meet Our Advocates</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
-              </a>
+              </Link>
             </div>
 
             {/* Box 2 */}
@@ -212,10 +213,10 @@ export default function Hero() {
               <p className="text-charcoal-600 text-xs sm:text-sm leading-relaxed font-sans mb-4">
                 Standing legal counsel for the Board of Revenue Punjab (BOR), LESCO, FGEHA, and official advisor to the Ministry of Law & Justice, Government of Pakistan.
               </p>
-              <a href="#sectors" className="text-xs font-serif uppercase tracking-wider font-bold text-gold hover:text-gold-700 inline-flex items-center">
+              <Link href="/sectors" className="text-xs font-serif uppercase tracking-wider font-bold text-gold hover:text-gold-700 inline-flex items-center">
                 <span>View Sectors & Appointments</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
-              </a>
+              </Link>
             </div>
 
             {/* Box 3 */}
@@ -229,10 +230,10 @@ export default function Hero() {
               <p className="text-charcoal-600 text-xs sm:text-sm leading-relaxed font-sans mb-4">
                 Over 28 years of court judgments reported in leading Law Journals upon judicial directions, reflecting decisive legal precedent and authoritative courtroom advocacy.
               </p>
-              <a href="#practice-areas" className="text-xs font-serif uppercase tracking-wider font-bold text-gold hover:text-gold-700 inline-flex items-center">
+              <Link href="/practice-areas" className="text-xs font-serif uppercase tracking-wider font-bold text-gold hover:text-gold-700 inline-flex items-center">
                 <span>Explore Legal Disciplines</span>
                 <ArrowRight className="w-3.5 h-3.5 ml-1" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

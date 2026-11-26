@@ -78,29 +78,14 @@ export default function AssociatesSection() {
                     )}
                   </div>
 
-                  {/* Header: Initial Crest & Names */}
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div
-                      className={`w-14 h-14 rounded flex items-center justify-center font-serif text-lg font-bold shrink-0 border ${
-                        isFounder
-                          ? "bg-ivory border-gold text-gold shadow-sm"
-                          : "bg-ivory border-champagne text-charcoal group-hover:border-gold group-hover:text-gold transition-colors"
-                      }`}
-                    >
-                      {advocate.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .slice(0, 2)
-                        .join("")}
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-lg sm:text-xl font-bold text-charcoal group-hover:text-gold transition-colors">
-                        {advocate.name}
-                      </h3>
-                      <p className="text-xs text-gold font-serif font-semibold">
-                        {advocate.title}
-                      </p>
-                    </div>
+                  {/* Header: Advocate Name & Title */}
+                  <div className="mb-4">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-charcoal group-hover:text-gold transition-colors">
+                      {advocate.name}
+                    </h3>
+                    <p className="text-xs text-gold font-serif font-semibold mt-0.5">
+                      {advocate.title}
+                    </p>
                   </div>
 
                   {/* Specialization tag */}
@@ -154,22 +139,16 @@ export default function AssociatesSection() {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="flex items-center space-x-4 mb-5">
-                <div className="w-16 h-16 rounded bg-ivory-card border border-gold flex items-center justify-center font-serif text-2xl font-bold text-gold">
-                  {selectedAssociate.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .slice(0, 2)
-                    .join("")}
-                </div>
-                <div>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal">
-                    {selectedAssociate.name}
-                  </h3>
-                  <p className="text-sm font-serif font-bold text-gold">
-                    {selectedAssociate.title} • {selectedAssociate.court}
-                  </p>
-                </div>
+              <div className="mb-6 pb-4 border-b border-champagne">
+                <span className="text-[11px] font-serif uppercase tracking-wider px-2.5 py-1 rounded bg-ivory border border-gold/40 text-gold font-bold inline-block mb-2">
+                  {selectedAssociate.court}
+                </span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-charcoal">
+                  {selectedAssociate.name}
+                </h3>
+                <p className="text-sm font-serif font-bold text-gold mt-1">
+                  {selectedAssociate.title}
+                </p>
               </div>
 
               {/* Public roles if present */}
