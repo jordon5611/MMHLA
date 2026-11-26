@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Scale, Phone, Mail, MapPin, ArrowUp } from "lucide-react";
 import { FIRM_DETAILS, PRACTICE_AREAS } from "@/data/firmData";
 
@@ -57,29 +58,29 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 font-sans">
               <li>
-                <a href="#about" className="hover:text-gold transition-colors">
+                <Link href="/about" className="hover:text-gold transition-colors">
                   About The Firm
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#associates" className="hover:text-gold transition-colors">
+                <Link href="/associates" className="hover:text-gold transition-colors">
                   Our Associates (8)
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#practice-areas" className="hover:text-gold transition-colors">
+                <Link href="/practice-areas" className="hover:text-gold transition-colors">
                   22 Practice Disciplines
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#sectors" className="hover:text-gold transition-colors">
+                <Link href="/sectors" className="hover:text-gold transition-colors">
                   Client Sectors
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-gold transition-colors">
+                <Link href="/contact" className="hover:text-gold transition-colors">
                   Chambers Consultation
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -92,15 +93,15 @@ export default function Footer() {
             <ul className="space-y-1.5 font-sans">
               {PRACTICE_AREAS.slice(0, 6).map((pa) => (
                 <li key={pa.id}>
-                  <a href="#practice-areas" className="hover:text-gold transition-colors line-clamp-1">
+                  <Link href="/practice-areas" className="hover:text-gold transition-colors line-clamp-1">
                     {pa.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
-                <a href="#practice-areas" className="text-gold hover:text-ivory font-medium inline-block pt-1 font-serif text-xs">
+                <Link href="/practice-areas" className="text-gold hover:text-ivory font-medium inline-block pt-1 font-serif text-xs">
                   View all 22 disciplines &rarr;
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -146,9 +147,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Mian Mohammad Hanif Law Associates. Traces in 1996. All rights reserved.
           </div>
           <div className="flex items-center space-x-4">
-            <a href="#about" className="hover:text-ivory">Privacy Disclosures</a>
+            <Link href="/about" className="hover:text-ivory">Privacy Disclosures</Link>
             <span>•</span>
-            <a href="#contact" className="hover:text-ivory">Chambers Terms</a>
+            <Link href="/contact" className="hover:text-ivory">Chambers Terms</Link>
             <span>•</span>
             <a
               href="#"

@@ -3,12 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Phone, Menu, X, ChevronRight, Mail, Clock, MapPin, MessageSquare } from "lucide-react";
 import { FIRM_DETAILS } from "@/data/firmData";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +21,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Associates", href: "#associates" },
-    { name: "Practice Areas", href: "#practice-areas" },
-    { name: "Sectors", href: "#sectors" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Practice Areas", href: "/practice-areas" },
+    { name: "Associates", href: "/associates" },
+    { name: "Sectors", href: "/sectors" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -108,16 +111,27 @@ export default function Navbar() {
 
             {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-xs uppercase font-medium tracking-widest text-champagne hover:text-gold transition-colors relative group py-1"
-                >
-                  {link.name}
-                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-gold transition-all duration-300 group-hover:w-full" />
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`text-xs uppercase tracking-widest transition-colors relative group py-1 ${
+                      isActive
+                        ? "text-gold font-bold"
+                        : "text-champagne hover:text-gold font-medium"
+                    }`}
+                  >
+                    {link.name}
+                    <span
+                      className={`absolute bottom-0 left-0 h-[1.5px] bg-gold transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Contact phone & Consultation CTA */}
@@ -129,13 +143,13 @@ export default function Navbar() {
                 <Phone className="w-3.5 h-3.5 text-gold" />
                 <span>{FIRM_DETAILS.contacts.phone}</span>
               </a>
-              <a
-                href="#contact"
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-serif font-bold tracking-wider uppercase text-charcoal-950 bg-gold hover:bg-gold-400 rounded transition-colors shadow-sm"
               >
                 Consultation
                 <ChevronRight className="w-3.5 h-3.5 ml-1" />
-              </a>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -162,17 +176,22 @@ export default function Navbar() {
           />
           <div className="relative z-50 lg:hidden bg-charcoal border-b border-gold/30 px-5 pt-4 pb-6 shadow-2xl animate-in slide-in-from-top-2 duration-200">
             <div className="flex flex-col space-y-3.5">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-serif tracking-wider uppercase text-ivory hover:text-gold py-2 border-b border-charcoal-800 flex items-center justify-between"
-                >
-                  <span>{link.name}</span>
-                  <ChevronRight className="w-4 h-4 text-gold/60" />
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`text-sm font-serif tracking-wider uppercase py-2 border-b border-charcoal-800 flex items-center justify-between ${
+                      isActive ? "text-gold font-bold" : "text-ivory hover:text-gold"
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronRight className="w-4 h-4 text-gold/60" />
+                  </Link>
+                );
+              })}
               <div className="pt-3 flex flex-col space-y-3">
                 <a
                   href={`tel:${FIRM_DETAILS.contacts.phone}`}
@@ -181,13 +200,13 @@ export default function Navbar() {
                   <Phone className="w-4 h-4 text-gold" />
                   <span>Call Chambers: {FIRM_DETAILS.contacts.phone}</span>
                 </a>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center text-center py-2.5 text-xs font-serif font-bold uppercase tracking-wider text-charcoal-950 bg-gold hover:bg-gold-400 rounded shadow-sm"
                 >
                   Request Legal Consultation
-                </a>
+                </Link>
               </div>
             </div>
           </div>
