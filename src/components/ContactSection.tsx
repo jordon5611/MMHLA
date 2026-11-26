@@ -220,7 +220,7 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Mohammad Ali"
-                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
+                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-base sm:text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
                       />
                     </div>
 
@@ -235,7 +235,7 @@ export default function ContactSection() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="e.g. +92 300 1234567"
-                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
+                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-base sm:text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
                       />
                     </div>
                   </div>
@@ -252,7 +252,7 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="e.g. ali@domain.com"
-                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
+                        className="w-full px-3.5 py-2.5 rounded bg-ivory-card border border-champagne focus:border-gold text-base sm:text-sm text-charcoal placeholder-charcoal-400 focus:outline-none"
                       />
                     </div>
 

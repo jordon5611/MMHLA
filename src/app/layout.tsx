@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Cinzel } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -19,6 +19,12 @@ const cinzel = Cinzel({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://haniflawassociates.com";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#211c16",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

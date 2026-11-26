@@ -152,39 +152,46 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer & Backdrop */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-charcoal border-b border-gold/30 px-5 pt-4 pb-6 shadow-2xl">
-          <div className="flex flex-col space-y-3.5">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-serif tracking-wider uppercase text-ivory hover:text-gold py-2 border-b border-charcoal-800 flex items-center justify-between"
-              >
-                <span>{link.name}</span>
-                <ChevronRight className="w-4 h-4 text-gold/60" />
-              </a>
-            ))}
-            <div className="pt-3 flex flex-col space-y-3">
-              <a
-                href={`tel:${FIRM_DETAILS.contacts.phone}`}
-                className="flex items-center justify-center space-x-2 text-xs font-medium text-champagne border border-charcoal-700 rounded py-2.5 bg-charcoal-800"
-              >
-                <Phone className="w-4 h-4 text-gold" />
-                <span>Call Chambers: {FIRM_DETAILS.contacts.phone}</span>
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center text-center py-2.5 text-xs font-serif font-bold uppercase tracking-wider text-charcoal-950 bg-gold hover:bg-gold-400 rounded shadow-sm"
-              >
-                Request Legal Consultation
-              </a>
+        <>
+          <div
+            onClick={() => setMobileMenuOpen(false)}
+            className="fixed inset-0 bg-charcoal-950/70 backdrop-blur-sm z-40 lg:hidden"
+            aria-hidden="true"
+          />
+          <div className="relative z-50 lg:hidden bg-charcoal border-b border-gold/30 px-5 pt-4 pb-6 shadow-2xl animate-in slide-in-from-top-2 duration-200">
+            <div className="flex flex-col space-y-3.5">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-serif tracking-wider uppercase text-ivory hover:text-gold py-2 border-b border-charcoal-800 flex items-center justify-between"
+                >
+                  <span>{link.name}</span>
+                  <ChevronRight className="w-4 h-4 text-gold/60" />
+                </a>
+              ))}
+              <div className="pt-3 flex flex-col space-y-3">
+                <a
+                  href={`tel:${FIRM_DETAILS.contacts.phone}`}
+                  className="flex items-center justify-center space-x-2 text-xs font-medium text-champagne border border-charcoal-700 rounded py-2.5 bg-charcoal-800"
+                >
+                  <Phone className="w-4 h-4 text-gold" />
+                  <span>Call Chambers: {FIRM_DETAILS.contacts.phone}</span>
+                </a>
+                <a
+                  href="#contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center text-center py-2.5 text-xs font-serif font-bold uppercase tracking-wider text-charcoal-950 bg-gold hover:bg-gold-400 rounded shadow-sm"
+                >
+                  Request Legal Consultation
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

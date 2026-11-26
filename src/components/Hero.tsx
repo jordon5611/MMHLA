@@ -99,7 +99,7 @@ export default function Hero() {
 
             {/* Right Column: Architectural Crest & Stats Ledger */}
             <div className="lg:col-span-5 w-full flex flex-col items-center">
-              <div className="w-full bg-ivory text-charcoal rounded-xl p-8 sm:p-9 shadow-2xl border-2 border-gold/40 relative">
+              <div className="w-full bg-ivory text-charcoal rounded-xl p-5 sm:p-9 shadow-2xl border-2 border-gold/40 relative">
                 {/* Official Logo Display */}
                 <div className="flex flex-col items-center justify-center pb-6 border-b border-champagne">
                   <div className="relative w-64 sm:w-72 h-auto py-2">
