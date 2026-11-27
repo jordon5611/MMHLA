@@ -89,11 +89,11 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             {/* Official Brand Logo */}
             <Link href="/" className="flex items-center space-x-3.5 group text-left">
-              <div className="relative h-12 sm:h-14 w-auto bg-ivory rounded px-2.5 py-1 border border-gold/40 flex items-center justify-center shadow-md">
+              <div className="relative h-12 sm:h-14 w-auto flex items-center justify-center">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-dark.png"
                   alt="Mian Mohammad Hanif Law Associates Logo"
-                  width={160}
+                  width={140}
                   height={56}
                   priority
                   className="h-10 sm:h-12 w-auto object-contain"
